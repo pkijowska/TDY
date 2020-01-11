@@ -41,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 100vh;
 }
 .button__random {
   display: flex;
@@ -52,4 +52,18 @@
 .button__select {
   display: flex;
 
+}
+
+.item {
+  width: 100vw;
+height: 100vh;
+}
+
+hr {
+    border: 0;
+    clear:both;
+ display:block;
+ width: 150%;
+ background-color:#FFFF00;
+ height: 3px;
 }

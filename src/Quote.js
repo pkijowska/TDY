@@ -11,6 +11,13 @@ class Quote extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  handleImg() {
+    fetch(`https://source.unsplash.com/1800x950/?wallpapers`).then((response)=> {
+  document.body.style.backgroundImage = `url(${response.url})`;
+})
+}
+
+
   handleClick() {
   console.log("click");
     fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=10", {
@@ -23,15 +30,16 @@ class Quote extends React.Component {
     .then(response => response.json())
     .then(data => {
       console.log(data[0]);
-    this.setState({quote: data[0]["quote"]});
+    // this.setState({quote: data[0]["quote"]});
     })
     .catch(err => {
   	console.log(err);
     });
   }
 
-  handleSelect() {
-
+  componentDidMount() {
+    this.handleClick();
+    this.handleImg();
   }
 
 
@@ -40,10 +48,9 @@ class Quote extends React.Component {
     <div className="button">
       <div className="button__random">
         <hr/>
-        <button onClick={this.handleClick}> Click for a random quote</button>
-        {this.state.quote}
+        <button onClick={this.handleClick}> New Quote</button>
+    <p> {this.state.quote}</p>
       </div>
-
     </div>
   );
 }
