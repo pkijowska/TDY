@@ -43,10 +43,17 @@ class Quote extends React.Component {
   }
 
 
+
+
+
   render() {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes();
   return (
     <div className="button">
       <div className="button__random">
+    <div>  {time} </div>
+
         <hr/>
         <button onClick={this.handleClick}> New Quote</button>
     <p> {this.state.quote}</p>
