@@ -2,13 +2,13 @@ The idea is a clone of Momentum, a google chrome plugin [Momentum](https://chrom
 
 ## Available Scripts
 
-[x] Display random quote using quotes API
-[x] Display current time
-[x] Add a todo list
-[x] See the current weather in your location
-[x] Use it as your chrome plugin
+_Display random quote using quotes API
+_Display current time
+_Add a todo list
+_See the current weather in your location
+_Use it as your chrome plugin
 
 ##Technology used
-[x] React
-[x] Sass
-[x] API 
+1. React
+2. Sass
+3. API 
