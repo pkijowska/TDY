@@ -73,3 +73,7 @@ hr {
  background-color:#FFFF00;
  height: 3px;
 }
+
+.img__icon {
+  height: 120px;
+}

@@ -8,7 +8,8 @@ class Quote extends React.Component {
     this.state = {
       quote: "",
       city: "",
-      temp: 0
+      temp: 0,
+      icon: ""
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleImg = this.handleImg.bind(this);
@@ -37,8 +38,13 @@ class Quote extends React.Component {
 
 //
 getWeather() {
-  const x = -33.791202399999996;
-  const y = 151.2870279;
+
+
+const x = 0;
+const y = 0;
+
+
+
   const apiKey = '0c1fc18fa9208d2579871cb527b4215e';
   var url = `http://api.openweathermap.org/data/2.5/forecast?lat=${x}&lon=${y}&APPID=${apiKey}`;
 // additional code
@@ -47,7 +53,10 @@ getWeather() {
   fetch(url).then(response => response.json()).then(data=> {
     this.setState({city: data['city']['name']});
     this.setState({temp: data['list'][0]['main']['temp']});
+    this.setState({icon: data['list'][0]['weather'][0]['icon']});
+    console.log(this.state.icon);
   });
+
 
 
 };
@@ -57,6 +66,7 @@ getWeather() {
   document.body.style.backgroundImage = `url(${response.url})`
   });
   }
+
 
 
 
@@ -72,8 +82,12 @@ componentDidMount() {
 
     const weather = Math.round(this.state.temp - 273);
     console.log(weather);
+    const icon = this.state.icon;
+    const src = "http://openweathermap.org/img/w/"+ icon +".png";
+    console.log(src);
   return (
     <div>
+      <img className="img__icon" src={src} alt="" />
       <p> {this.state.city}</p>
       <p> {weather}<sup>O</sup>C</p>
       <div className="button">
