@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+body {
+  color: white;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -60,8 +66,8 @@ height: 100vh;
 }
 
 hr {
-    border: 0;
-    clear:both;
+  border: 0;
+  clear:both;
  display:block;
  width: 150%;
  background-color:#FFFF00;
