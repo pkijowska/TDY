@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-
 import './App.css';
-
 import Google from './Google';
-
+import Todo from './Todo';
 
 
 class Quote extends React.Component {
@@ -228,7 +226,7 @@ class Quote extends React.Component {
         </div>
 
       </div>
-
+    <Todo/>
     </div>
 
   );
