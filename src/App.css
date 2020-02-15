@@ -44,21 +44,13 @@ body {
 }
 
 .button__select {
-
   display: flex;
-
-
-
 }
 
 
-
 .item {
-
   width: 100vw;
-
-height: 100vh;
-
+  height: 100vh;
 }
 
 
@@ -73,20 +65,14 @@ hr {
   width: 50%;
 }
 
-
-
 .upper-container__img {
   height: 100px;
   margin: 0px;
 }
 
-
-
 .form-search {
   position: absolute;
 }
-
-
 
 .form-search__input{
   background-color: transparent;
@@ -100,7 +86,7 @@ hr {
 .form-search__icon {
   position: relative;
   left: 15px;
-  top: 8px;
+  top: 0;
 }
 
 
@@ -120,7 +106,7 @@ margin: 5px;
 
 
 .bottom-container {
-  height: 70vh;
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -138,7 +124,7 @@ font-style: italic;
 
 
 
-.button-todo{
+.todo__button{
  background-color: bisque;
  width: 100px;
  height: 50px;
@@ -150,6 +136,24 @@ font-style: italic;
 .button-todo--new {
  background-color: slategrey;
  width: 100px;
- height: 300px;
+ height: auto;
  border-radius: 0%;
+}
+
+.todo__input {
+  visibility: hidden;
+}
+
+.input-todo--visible {
+  visibility: visible;
+}
+
+.button-todo--nonvisible {
+  display: none;
+}
+
+.todo__input {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 150px;
+  height: 20px;
 }
