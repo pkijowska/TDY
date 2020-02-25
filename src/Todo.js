@@ -52,11 +52,11 @@ class Todo extends React.Component {
         <div>
           <div className="todo">
             <h3>All todos:</h3>
-            <p>{todolist}</p>
             <button className="todo__button" onClick={this.handleClick}>New Todo</button>
             <form onSubmit={this.handleSubmit}>
               <input type="text" value={this.state.value} onChange={this.handleChange} className="todo__input"></input>
             </form>
+            <p>{todolist}</p>
           </div>
         </div>
       );

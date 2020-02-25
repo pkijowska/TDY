@@ -27,20 +27,21 @@ class Quote extends React.Component {
 
 
 
-    handleClick() {
-      fetch("http://quotes.rest/qod.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then(data => {
-      this.setState({quote: data["contents"]["quotes"][0]["quote"]});
-      console.log(data["contents"]["quotes"][0]["quote"]);
+      handleClick() {
+        fetch("http://quotes.rest/qod.json")
+        .then((response) => {
+          return response.json();
+        })
+        .then(data => {
+        this.setState({quote: data["contents"]["quotes"][0]["quote"]});
+        console.log(data["contents"]["quotes"][0]["quote"]);
 
-      })
-      .catch(err => {
-    	console.log(err);
-      });
-    }
+        })
+        .catch(err => {
+      	console.log(err);
+        });
+      }
+
 
     getLocation() {
       if (navigator.geolocation) {
@@ -50,7 +51,6 @@ class Quote extends React.Component {
     showPosition(position) {
       this.setState({x :position.coords.latitude});
       this.setState({y :position.coords.longitude});
-      console.log(this.state.x);
       const apiKey = '0c1fc18fa9208d2579871cb527b4215e';
       const x = this.state.x;
       const y = this.state.y;
@@ -73,7 +73,7 @@ class Quote extends React.Component {
 
 
     componentDidMount() {
-      // this.handleClick();
+      this.handleClick();
       this.handleImg();
       this.getLocation();
     }
@@ -106,8 +106,7 @@ class Quote extends React.Component {
           </div>
             <hr/>
           <div className="bottom-container__inner">
-            <p className="bottom-container__inner--small"> {this.state.quote}</p>
-            <button onClick={this.handleClick}> Quote of the day</button>
+            <p className="bottom-container__inner--small"> <span>Quote of the day:</span> {this.state.quote}</p>
           </div>
         </div>
       <Todo/>
